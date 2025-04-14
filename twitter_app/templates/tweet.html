@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="tweet-form">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center">Post a Tweet</h2>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <textarea name="tweet" class="form-control" rows="3" maxlength="280" placeholder="What's happening?"></textarea>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Tweet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

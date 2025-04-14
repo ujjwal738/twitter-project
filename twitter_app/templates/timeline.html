@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="tweet-list">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center">Your Tweets</h2>
+        </div>
+        <div class="card-body">
+            {% if tweets %}
+                {% for user_id, text in tweets %}
+                    <div class="tweet-item">
+                        <strong>User ID: {{ user_id }}</strong>
+                        <p>{{ text }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-center">No tweets to display.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
